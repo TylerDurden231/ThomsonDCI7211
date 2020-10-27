@@ -114,7 +114,7 @@ def runTest():
                         
                         return    
                 
-                if not(TEST_CREATION_API.compare_pictures("zon_box_data_ref", "zon_box_data", "[SN_MENU]")):
+                if not(TEST_CREATION_API.compare_pictures("zon_box_data_ref", "zon_box_data", "[SN_MENU]") or TEST_CREATION_API.compare_pictures("zon_box_data_ref_2", "zon_box_data", "[SN_MENU]")):
                     TEST_CREATION_API.send_ir_rc_command("[EXIT]")
                     TEST_CREATION_API.send_ir_rc_command("[EXIT_WITHOUT_DELAY]")
                     time.sleep(1)
@@ -173,7 +173,7 @@ def runTest():
                             
                             return    
                 
-                if not(TEST_CREATION_API.compare_pictures("zon_box_data_ref", "zon_box_data", "[SN_MENU]")):
+                if not(TEST_CREATION_API.compare_pictures("zon_box_data_ref", "zon_box_data", "[SN_MENU]") or TEST_CREATION_API.compare_pictures("zon_box_data_ref_2", "zon_box_data", "[SN_MENU]")):
                     TEST_CREATION_API.write_log_to_file("Doesn't Navigate to right place")
                     NOS_API.set_error_message("Navegação")
                     NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.navigation_error_code \
@@ -345,7 +345,7 @@ def runTest():
                         
                         return    
         
-                if not(TEST_CREATION_API.compare_pictures("stb_info_ref", "stb_info", "[Page_Number]")):
+                if not(TEST_CREATION_API.compare_pictures("stb_info_ref", "stb_info", "[Page_Number]") or TEST_CREATION_API.compare_pictures("stb_info_ref_2", "stb_info", "[Page_Number]")):
                     TEST_CREATION_API.send_ir_rc_command("[REDO_Info]")
                     try:
                         TEST_CREATION_API.grab_picture("stb_info")
@@ -395,7 +395,7 @@ def runTest():
                         
                         
                         return
-                if not(TEST_CREATION_API.compare_pictures("stb_info_ref", "stb_info", "[Page_Number]")):
+                if not(TEST_CREATION_API.compare_pictures("stb_info_ref", "stb_info", "[Page_Number]") or TEST_CREATION_API.compare_pictures("stb_info_ref_2", "stb_info", "[Page_Number]")):
                     TEST_CREATION_API.write_log_to_file("Doesn't Navigate to right place")
                     NOS_API.set_error_message("Navegação")
                     NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.navigation_error_code \
@@ -498,7 +498,7 @@ def runTest():
                         
                         return    
                 
-                if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]")):
+                if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]") or TEST_CREATION_API.compare_pictures("File_1", "sc_info", "[Page_Number]")):
                     TEST_CREATION_API.send_ir_rc_command("[REDO_SC]")
                     try:
                         TEST_CREATION_API.grab_picture("sc_info")
@@ -544,7 +544,7 @@ def runTest():
                             report_file)
 
                         return
-                if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]")):
+                if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]") or TEST_CREATION_API.compare_pictures("File_1", "sc_info", "[Page_Number]")):
                     TEST_CREATION_API.write_log_to_file("Doesn't Navigate to right place")
                     NOS_API.set_error_message("Navegação")
                     NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.navigation_error_code \
@@ -586,10 +586,11 @@ def runTest():
                    
                     return
                     
-                video_result = NOS_API.mask_and_compare_pictures("File", "sc_info", "File-MASK");
+                video_result = NOS_API.mask_and_compare_pictures("File", "sc_info", "File-MASK")
+                video_result_1 = NOS_API.mask_and_compare_pictures("File_1", "sc_info", "File-MASK")
         
                 ## Check is SC not detected
-                if (video_result >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
+                if (video_result >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or video_result_1 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
                 
                     NOS_API.display_dialog("Reinsira o cart\xe3o e de seguida pressiona Continuar", NOS_API.WAIT_TIME_TO_CLOSE_DIALOG) == "Continuar"
                     
@@ -645,7 +646,7 @@ def runTest():
                             
                             return    
                     
-                    if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]")):
+                    if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]") or TEST_CREATION_API.compare_pictures("File_1", "sc_info", "[Page_Number]")):
                         TEST_CREATION_API.send_ir_rc_command("[REDO_SC]")
                         try:
                             TEST_CREATION_API.grab_picture("sc_info")
@@ -692,7 +693,7 @@ def runTest():
         
                             return
                     
-                    if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]")):
+                    if not(TEST_CREATION_API.compare_pictures("File", "sc_info", "[Page_Number]") or TEST_CREATION_API.compare_pictures("File_1", "sc_info", "[Page_Number]")):
                         TEST_CREATION_API.write_log_to_file("Doesn't Navigate to right place")
                         NOS_API.set_error_message("Navegação")
                         NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.navigation_error_code \
@@ -734,10 +735,11 @@ def runTest():
                     
                         return
                     
-                    video_result = NOS_API.mask_and_compare_pictures("File", "sc_info", "File-MASK");
-            
+                    video_result = NOS_API.mask_and_compare_pictures("File", "sc_info", "File-MASK")
+                    video_result_1 = NOS_API.mask_and_compare_pictures("File_1", "sc_info", "File-MASK")
+
                     ## Check is SC not detected
-                    if (video_result >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
+                    if (video_result >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or video_result_1 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
                         
                     ####################################################################################################
                         TEST_CREATION_API.write_log_to_file("Smart card is not detected")

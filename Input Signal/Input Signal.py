@@ -210,7 +210,7 @@ def runTest():
                         
                         return        
                             
-                if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
+                if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.send_ir_rc_command("[OK]")
                     NOS_API.wait_for_signal_present(500)
                     NOS_API.test_cases_results_info.DidUpgrade = 1
@@ -274,9 +274,8 @@ def runTest():
                             
                             return        
                 
-                    
-                
-                if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+
+                if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.send_ir_rc_command("[OK]")
                     time.sleep(300)
                     NOS_API.test_cases_results_info.DidUpgrade = 1
@@ -498,7 +497,7 @@ def runTest():
                         
                         return        
                             
-                if not(TEST_CREATION_API.compare_pictures("HDMI_video_ref", "menu", "[HALF_SCREEN]") or TEST_CREATION_API.compare_pictures("no_signal_ref", "menu") or TEST_CREATION_API.compare_pictures("no_signal_ref2", "menu")):
+                if not(TEST_CREATION_API.compare_pictures("HDMI_video_ref", "menu", "[HALF_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("no_signal_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("no_signal_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.write_log_to_file("Image is not reproduced correctly on HDMI.")
                     NOS_API.update_test_slot_comment("Error code: " + NOS_API.test_cases_results_info.hdmi_720p_noise_error_code \
                                                         + "; Error message: " + NOS_API.test_cases_results_info.hdmi_720p_noise_error_message)
@@ -547,6 +546,7 @@ def runTest():
                 macro_signal_level = "[SIGNAL_VALUE_50_PERCENT]"
                 macro_signal_quality = "[SIGNAL_QUALITY_50_PERCENT]"
                 ref_image = "signal_value_ref"
+                ref_image_2 = "signal_value_ref"
 
             else:    
                 video_height = NOS_API.get_av_format_info(TEST_CREATION_API.AudioVideoInfoType.video_height)
@@ -603,7 +603,7 @@ def runTest():
                         
                         return        
             
-                if(TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+                if(TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                     NOS_API.wait_for_signal_present(500)
                     NOS_API.test_cases_results_info.DidUpgrade = 1
                     time.sleep(5)
@@ -667,7 +667,7 @@ def runTest():
                             return        
                             
                 
-                if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+                if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.send_ir_rc_command("[OK]")
                     time.sleep(300)
                     NOS_API.test_cases_results_info.DidUpgrade = 1
@@ -727,7 +727,7 @@ def runTest():
                             return        
                             
                                                 
-                    if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+                    if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                         TEST_CREATION_API.send_ir_rc_command("[OK]")
                         time.sleep(120)
                         TEST_CREATION_API.send_ir_rc_command("[POWER]")
@@ -786,7 +786,7 @@ def runTest():
                                 return        
                             
                             
-                        if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+                        if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                             NOS_API.test_cases_results_info.isTestOK = False  
                             NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                             + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -832,7 +832,7 @@ def runTest():
                             
                             return
                    
-                if(TEST_CREATION_API.compare_pictures("Old_SW_ref", "menu", "[Old_SW]") or TEST_CREATION_API.compare_pictures("Cannot_Upgrade_ref", "menu", "[FULL_SCREEN]")):
+                if(TEST_CREATION_API.compare_pictures("Old_SW_ref", "menu", "[Old_SW]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Cannot_Upgrade_ref", "menu", "[FULL_SCREEN]", NOS_API.thres)):
                     NOS_API.test_cases_results_info.isTestOK = False  
                     NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                     + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -875,7 +875,7 @@ def runTest():
                     return
                 ########################################
                 
-                if not(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "menu") or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "menu") or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "menu")):
+                if not(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "menu", "[FULL_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.write_log_to_file("Image is not reproduced correctly on HDMI.")
                     NOS_API.update_test_slot_comment("Error code: " + NOS_API.test_cases_results_info.hdmi_720p_noise_error_code \
                                                         + "; Error message: " + NOS_API.test_cases_results_info.hdmi_720p_noise_error_message)
@@ -969,7 +969,7 @@ def runTest():
                         
                         return        
             
-                if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref","Install") or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Install") or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Install")):
+                if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref","Install", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Install", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Install", "[FULL_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.send_ir_rc_command("[INSTALLATION_BOOT_UP_SEQUENCE_2]")
                     try:
                         TEST_CREATION_API.grab_picture("Install")
@@ -1020,7 +1020,7 @@ def runTest():
                             
                             return        
                     
-                    if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref","Install") or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Install") or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Install")):
+                    if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref","Install", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Install", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Install", "[FULL_SCREEN]", NOS_API.thres)):
                         NOS_API.update_test_slot_comment("Error code: " + NOS_API.test_cases_results_info.ir_nok_error_code \
                                     + "; Error message: " + NOS_API.test_cases_results_info.ir_nok_error_message) 
                         NOS_API.set_error_message("IR")
@@ -1062,7 +1062,7 @@ def runTest():
                         return        
     
                 start_time = int(time.time())
-                while not(TEST_CREATION_API.compare_pictures("Santarem", "Install")):
+                while not(TEST_CREATION_API.compare_pictures("Santarem", "Install") or TEST_CREATION_API.compare_pictures("Santarem_2", "Install")):
                     TEST_CREATION_API.send_ir_rc_command("[DOWN]")
                     try:
                         TEST_CREATION_API.grab_picture("Install")
@@ -1209,7 +1209,7 @@ def runTest():
 
                         
                         return
-                if (TEST_CREATION_API.compare_pictures("Santarem", "Install_1")):
+                if (TEST_CREATION_API.compare_pictures("Santarem", "Install_1") or TEST_CREATION_API.compare_pictures("Santarem_2", "Install_1")):
                     TEST_CREATION_API.send_ir_rc_command("[OK]") 
                     time.sleep(1)
                     try:
@@ -1261,7 +1261,7 @@ def runTest():
 
                             
                             return
-                    if (TEST_CREATION_API.compare_pictures("Santarem", "Install_2")):
+                    if (TEST_CREATION_API.compare_pictures("Santarem", "Install_2") or TEST_CREATION_API.compare_pictures("Santarem_2", "Install_2")):
                         NOS_API.update_test_slot_comment("Error code: " + NOS_API.test_cases_results_info.ir_nok_error_code \
                         + "; Error message: " + NOS_API.test_cases_results_info.ir_nok_error_message)
                         NOS_API.set_error_message("IR")
@@ -1308,6 +1308,7 @@ def runTest():
                 macro_signal_level = "[SIGNAL_VALUE_FTI_50_PERCENT]"
                 macro_signal_quality = "[SIGNAL_QUALITY_FTI_50_PERCENT]"
                 ref_image = "signal_value_fti_ref"
+                ref_image_2 = "signal_value_fti_ref_2"
    
             ## Perform grab picture
             try:
@@ -1363,7 +1364,7 @@ def runTest():
             
             ## Check state of STB
             if (NOS_API.test_cases_results_info.channel_boot_up_state):
-                if(TEST_CREATION_API.compare_pictures("signal_value_ref", "signal_value", "[MENU_VALUES]")== False):
+                if(TEST_CREATION_API.compare_pictures("signal_value_ref", "signal_value", "[MENU_VALUES]", NOS_API.thres)== False):
                     TEST_CREATION_API.send_ir_rc_command("[EXIT]")
                     time.sleep(1)
                     TEST_CREATION_API.send_ir_rc_command("[SIGNAL_LEVEL_SETTINGS]")
@@ -1419,10 +1420,12 @@ def runTest():
             
             ## Extract text from image
                        
-            signal_quality = NOS_API.compare_pictures(ref_image, "signal_value", macro_signal_quality);
+            signal_quality = NOS_API.compare_pictures(ref_image, "signal_value", macro_signal_quality)
+            signal_quality_2 = NOS_API.compare_pictures(ref_image_2, "signal_value", macro_signal_quality)
+
 
             ## Check if signal value higher than threshold
-            if (signal_quality >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
+            if (signal_quality >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or signal_quality_2 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
                 test_result = "PASS"
 
             else:
@@ -1481,7 +1484,7 @@ def runTest():
 
                         
                         return
-                if (TEST_CREATION_API.compare_pictures("Santarem", "Install_3")):
+                if (TEST_CREATION_API.compare_pictures("Santarem", "Install_3") or TEST_CREATION_API.compare_pictures("Santarem_2", "Install_3")):
                     TEST_CREATION_API.send_ir_rc_command("[OK]") 
                     time.sleep(1)
                 try:
@@ -1533,7 +1536,7 @@ def runTest():
 
                         
                         return
-                if (TEST_CREATION_API.compare_pictures("Santarem", "Install_4")):
+                if (TEST_CREATION_API.compare_pictures("Santarem", "Install_4") or TEST_CREATION_API.compare_pictures("Santarem_2", "Install_4")):
                     NOS_API.update_test_slot_comment("Error code: " + NOS_API.test_cases_results_info.ir_nok_error_code \
                     + "; Error message: " + NOS_API.test_cases_results_info.ir_nok_error_message)
                     NOS_API.set_error_message("IR")
@@ -1628,7 +1631,8 @@ def runTest():
                     
                     ## Extract text from image
                             
-                    signal_quality = NOS_API.compare_pictures(ref_image, "signal_value", macro_signal_quality);
+                    signal_quality = NOS_API.compare_pictures(ref_image, "signal_value", macro_signal_quality)
+                    signal_quality_2 = NOS_API.compare_pictures(ref_image_2, "signal_value", macro_signal_quality)
                     
                 except Exception as error:
                     test_result = "FAIL"
@@ -1642,7 +1646,7 @@ def runTest():
                     signal_quality = 0
                     
                 ## Check if signal value higher than threshold
-                if (signal_quality >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
+                if (signal_quality >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or signal_quality_2 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
                     test_result = "PASS"
                 else:   
                     TEST_CREATION_API.write_log_to_file("Signal quality is lower than threshold")
@@ -1739,7 +1743,7 @@ def runTest():
                         return        
             
                 
-                if(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values", "[MENU_VALUES]")== False):
+                if(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values", "[MENU_VALUES]", NOS_API.thres)== False):
                     TEST_CREATION_API.send_ir_rc_command("[EXIT]")
                     time.sleep(1)
                     TEST_CREATION_API.send_ir_rc_command("[CH_1]")
@@ -1758,13 +1762,14 @@ def runTest():
             else:
                 TEST_CREATION_API.send_ir_rc_command("[OK]")
                 
-                result = NOS_API.wait_for_multiple_pictures(["Channels_list_ref"], 40, ["[Channels_List]"], [80])
+                result = NOS_API.wait_for_multiple_pictures(["Channels_list_ref", "Channels_list_ref_2"], 40, ["[Channels_List]", "[Channels_List]"], [80, 80])
                 
-                if (result != 0):
+                if (result != 0 and result != 1):
+                    
                     TEST_CREATION_API.send_ir_rc_command("[OK]")
                     
-                    result = NOS_API.wait_for_multiple_pictures(["Channels_list_ref"], 40, ["[Channels_List]"], [80])
-                    if (result != 0):
+                    result = NOS_API.wait_for_multiple_pictures(["Channels_list_ref", "Channels_list_ref_2"], 40, ["[Channels_List]", "[Channels_List]"], [80, 80])
+                    if (result != 0 and result != 1):
                         TEST_CREATION_API.write_log_to_file("STB Blocks")
                         NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.block_error_code \
                                                 + "; Error message: " + NOS_API.test_cases_results_info.block_error_message)
@@ -1847,7 +1852,7 @@ def runTest():
                    
                    return
               
-                if(TEST_CREATION_API.compare_pictures("Channels_list_ref", "Channels_List", "[Channels_List]")):
+                if(TEST_CREATION_API.compare_pictures("Channels_list_ref", "Channels_List", "[Channels_List]") or TEST_CREATION_API.compare_pictures("Channels_list_ref_2", "Channels_List", "[Channels_List]")):
                     TEST_CREATION_API.send_ir_rc_command("[OK]")
                     if not(NOS_API.grab_picture("Channels_List_2")):
                         TEST_CREATION_API.write_log_to_file("HDMI NOK")
@@ -1887,7 +1892,7 @@ def runTest():
                                 report_file)
                         
                         return
-                    if(TEST_CREATION_API.compare_pictures("Channels_list_ref", "Channels_List_2", "[Channels_List]")):
+                    if(TEST_CREATION_API.compare_pictures("Channels_list_ref", "Channels_List_2", "[Channels_List]") or TEST_CREATION_API.compare_pictures("Channels_list_ref_2", "Channels_List", "[Channels_List]")):
                         TEST_CREATION_API.write_log_to_file("STB Blocks")
                         NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.block_error_code \
                                                 + "; Error message: " + NOS_API.test_cases_results_info.block_error_message)
@@ -1928,7 +1933,7 @@ def runTest():
                                 report_file)
                         return
 
-                if(TEST_CREATION_API.compare_pictures("update_screen_ref", "Channels_List", "[UPDATE_SCREEN]")):
+                if(TEST_CREATION_API.compare_pictures("update_screen_ref", "Channels_List", "[UPDATE_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.send_ir_rc_command("[OK]")
                     NOS_API.wait_for_signal_present(500)
                     time.sleep(5)
@@ -2039,7 +2044,7 @@ def runTest():
                 
                 ############### Pode haver falhas devido a imagens capturadas estarem desviadas
                 
-                    if(TEST_CREATION_API.compare_pictures("HDMI_video_" + video_height +"_ref", "menu", pic_macro)):
+                    if(TEST_CREATION_API.compare_pictures("HDMI_video_" + video_height +"_ref", "menu", pic_macro, NOS_API.thres)):
                         ## Set resolution to 720p and navigate to the signal level settings
                         TEST_CREATION_API.send_ir_rc_command("[SET_RESOLUTION_720p_T7211]")
                         TEST_CREATION_API.send_ir_rc_command("[INIT]")
@@ -2191,7 +2196,7 @@ def runTest():
                             
                         return
              
-                if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+                if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                     TEST_CREATION_API.send_ir_rc_command("[OK]")
                     time.sleep(300)
                     NOS_API.test_cases_results_info.DidUpgrade = 1
@@ -2247,7 +2252,7 @@ def runTest():
                             return        
                 
                                                 
-                    if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+                    if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                         TEST_CREATION_API.send_ir_rc_command("[OK]")
                         time.sleep(120)
                         TEST_CREATION_API.send_ir_rc_command("[POWER]")
@@ -2302,7 +2307,7 @@ def runTest():
                                 return        
                     
                             
-                        if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]")):
+                        if(TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                             NOS_API.test_cases_results_info.isTestOK = False  
                             NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                             + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -2345,7 +2350,7 @@ def runTest():
                             return
                 time.sleep(2)
                 
-                if(TEST_CREATION_API.compare_pictures("Cannot_Upgrade_ref", "menu", "[FULL_SCREEN]")):
+                if(TEST_CREATION_API.compare_pictures("Cannot_Upgrade_ref", "menu", "[FULL_SCREEN]", NOS_API.thres)):
                     NOS_API.test_cases_results_info.isTestOK = False  
                     NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                     + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -2563,7 +2568,7 @@ def runTest():
                         return        
             
                 
-                if(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values", "[SIGNAL_VALUES_MENU]")== False):
+                if not(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values", "[SIGNAL_VALUES_MENU]") or TEST_CREATION_API.compare_pictures("menu_values_ref_2", "menu_values", "[SIGNAL_VALUES_MENU]")):
                     TEST_CREATION_API.send_ir_rc_command("[EXIT]")
                     TEST_CREATION_API.send_ir_rc_command("[EXIT]")
                     time.sleep(4)
@@ -2622,7 +2627,7 @@ def runTest():
                             return        
                 
                  
-                    if(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values_1", "[SIGNAL_VALUES_MENU]")== False):
+                    if not(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values_1", "[SIGNAL_VALUES_MENU]") or TEST_CREATION_API.compare_pictures("menu_values_ref_2", "menu_values_1", "[SIGNAL_VALUES_MENU]")):
                         
                         TEST_CREATION_API.send_ir_rc_command("[EXIT]")
                         TEST_CREATION_API.send_ir_rc_command("[EXIT]")
@@ -2681,7 +2686,7 @@ def runTest():
                                
                                 return        
                     
-                        if(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values_2", "[SIGNAL_VALUES_MENU]")== False):
+                        if not(TEST_CREATION_API.compare_pictures("menu_values_ref", "menu_values_2", "[SIGNAL_VALUES_MENU]") or TEST_CREATION_API.compare_pictures("menu_values_ref_2", "menu_values_2", "[SIGNAL_VALUES_MENU]")):
                             TEST_CREATION_API.write_log_to_file("Doesn't Navigate to right place")
                             NOS_API.set_error_message("Navegação")
                             NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.navigation_error_code \

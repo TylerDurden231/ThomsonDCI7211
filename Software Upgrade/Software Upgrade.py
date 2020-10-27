@@ -60,6 +60,9 @@ TIMEOUT_CAUSE_SW_UPGRADE = 4
 ## Time to switch from HDMI to SCART in seconds
 WAIT_TO_SWITCH_SCART = 6
 
+NOS_API.grabber_type()
+TEST_CREATION_API.grabber_type()
+
 def runTest():
    
     NOS_API.read_thresholds()
@@ -587,8 +590,8 @@ def runTest():
                             return 
                                                     
                     if(video_height == "720"):
-                        if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
-                            if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]")):
+                        if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
+                            if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres)):
                                 NOS_API.test_cases_results_info.isTestOK = False  
                                 NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                 + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -675,8 +678,8 @@ def runTest():
                                 
                                 return 
                                     
-                            if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
-                                if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]")):
+                            if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
+                                if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres)):
                                     NOS_API.test_cases_results_info.isTestOK = False  
                                     NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                     + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -761,7 +764,7 @@ def runTest():
                                     
                                     return
                                             
-                                if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
+                                if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                                     NOS_API.test_cases_results_info.isTestOK = False  
                                     NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                     + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -808,7 +811,7 @@ def runTest():
                         NOS_API.SET_720 = False
                     
                     if not(video_height == "576"):
-                        threshold = TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD
+                        threshold = NOS_API.thres
                         
                     else:
                         threshold = NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD
@@ -1058,11 +1061,11 @@ def runTest():
                                 
                                 return
                             if(video_height == "720"):
-                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                             elif(video_height == "1080"):
-                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                             if (result or result_1):
                                 NOS_API.test_cases_results_info.channel_boot_up_state = False
                             else:
@@ -1202,11 +1205,11 @@ def runTest():
                                         
                                         return
                                     if(video_height == "720"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                     elif(video_height == "1080"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                     if (result or result_1):
                                         NOS_API.test_cases_results_info.channel_boot_up_state = False
                                     else:
@@ -1382,11 +1385,11 @@ def runTest():
                                     
                                     return
                                 if(video_height == "720"):
-                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                 elif(video_height == "1080"):
-                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                 if (result or result_1):
                                     NOS_API.test_cases_results_info.channel_boot_up_state = False
                                 else:
@@ -1566,11 +1569,11 @@ def runTest():
                                             
                                             return
                                         if(video_height == "720"):
-                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                         elif(video_height == "1080"):
-                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                         if (result or result_1):
                                             NOS_API.test_cases_results_info.channel_boot_up_state = False
                                         else:
@@ -1705,7 +1708,7 @@ def runTest():
                         if (video_height != "720"):
                             #Nao ha casos para 576
                             if (video_height == "1080"):
-                                if (TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "menu", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)):
+                                if (TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "menu", "[Inst_Mode_1080]", NOS_API.thres)):
                                     TEST_CREATION_API.write_log_to_file("Installation Resolution")
                                     NOS_API.test_cases_results_info.isTestOK = False
                                     NOS_API.set_error_message("Resolução")
@@ -1866,14 +1869,14 @@ def runTest():
                                 report_file)
                             
                             return
-                        if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)):
+                        if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Status_Check", "[Inst_Mode]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Status_Check", "[Inst_Mode]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Status_Check", "[Inst_Mode]", NOS_API.thres)):
                             NOS_API.test_cases_results_info.channel_boot_up_state = False
                         else:
                             TEST_CREATION_API.send_ir_rc_command("[CH_1]")
                             TEST_CREATION_API.send_ir_rc_command("[MENU]")
                             TEST_CREATION_API.send_ir_rc_command("[MENU]")
                             time.sleep(1)
-                            if (TEST_CREATION_API.compare_pictures("menu_" + video_height + "_ref", "Status_Check", "[MENU_" + video_height + "]", threshold) or TEST_CREATION_API.compare_pictures("menu_cable_" + video_height + "_ref", "Status_Check", "[MENU_" + video_height + "]", threshold) or TEST_CREATION_API.compare_pictures("menu_" + video_height + "_eng_ref", "Status_Check", "[MENU_" + video_height + "]", threshold) or TEST_CREATION_API.compare_pictures("menu_cable_" + video_height + "_eng_ref", "Status_Check", "[MENU_" + video_height + "]", threshold) or TEST_CREATION_API.compare_pictures("Menu_Black_" + video_height + "_ref", "Status_Check", "[MENU_" + video_height + "]", threshold) or TEST_CREATION_API.compare_pictures("Menu_Black_" + video_height + "_eng_ref", "Status_Check", "[MENU_" + video_height + "]", threshold)):
+                            if (TEST_CREATION_API.compare_pictures("menu_" + video_height + "_ref", "Status_Check", "[MENU_" + video_height + "]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("menu_cable_" + video_height + "_ref", "Status_Check", "[MENU_" + video_height + "]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("menu_" + video_height + "_eng_ref", "Status_Check", "[MENU_" + video_height + "]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("menu_cable_" + video_height + "_eng_ref", "Status_Check", "[MENU_" + video_height + "]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Menu_Black_" + video_height + "_ref", "Status_Check", "[MENU_" + video_height + "]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Menu_Black_" + video_height + "_eng_ref", "Status_Check", "[MENU_" + video_height + "]", NOS_API.thres)):
                                 TEST_CREATION_API.send_ir_rc_command("[Inst_Mode]")
                                 time.sleep(5) 
                                 if (NOS_API.is_signal_present_on_video_source()):
@@ -1964,11 +1967,11 @@ def runTest():
                                         
                                         return
                                     if(video_height == "720"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                     elif(video_height == "1080"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                     if (result or result_1):
                                         NOS_API.test_cases_results_info.channel_boot_up_state = False
                                     else:
@@ -2148,11 +2151,11 @@ def runTest():
                                                 
                                                 return
                                             if(video_height == "720"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                             elif(video_height == "1080"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                             if (result or result_1):
                                                 NOS_API.test_cases_results_info.channel_boot_up_state = False
                                             else:
@@ -2520,7 +2523,7 @@ def runTest():
                                     report_file)
                                 return
                             #if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]") or TEST_CREATION_API.compare_pictures("update_screen_720_ref2", "menu", "[UPDATE_SCREEN]")):
-                            if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):    
+                            if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):    
                                 TEST_CREATION_API.send_ir_rc_command("[OK]")
                                 #time.sleep(340)
                                 NOS_API.test_cases_results_info.DidUpgrade = 1
@@ -2822,8 +2825,8 @@ def runTest():
                                     
                                     return
                             if(video_height == "720"):
-                                if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
-                                    if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]")):
+                                if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
+                                    if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres)):
                                         NOS_API.test_cases_results_info.isTestOK = False  
                                         NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                         + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -2910,8 +2913,8 @@ def runTest():
                                         
                                         return
                                     
-                                    if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
-                                        if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]")):
+                                    if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
+                                        if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres)):
                                             NOS_API.test_cases_results_info.isTestOK = False  
                                             NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                             + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -2996,7 +2999,7 @@ def runTest():
                                                 report_file)
                                             return
                                             
-                                        if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
+                                        if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                                             NOS_API.test_cases_results_info.isTestOK = False  
                                             NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                             + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -3090,7 +3093,7 @@ def runTest():
                     
                             
                             if not(video_height == "576"):
-                                threshold = TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD
+                                threshold = NOS_API.thres
                                 
                             else:
                                 threshold = NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD
@@ -3295,11 +3298,11 @@ def runTest():
                                         
                                         return
                                     if(video_height == "720"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                     elif(video_height == "1080"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                     if (result or result_1):
                                         NOS_API.test_cases_results_info.channel_boot_up_state = False
                                     else:
@@ -3440,11 +3443,11 @@ def runTest():
                                                 return
                                             
                                             if(video_height == "720"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                             elif(video_height == "1080"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                             if (result or result_1):
                                                 NOS_API.test_cases_results_info.channel_boot_up_state = False
                                             else:
@@ -3620,11 +3623,11 @@ def runTest():
                                             
                                             return
                                         if(video_height == "720"):
-                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                         elif(video_height == "1080"):
-                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thresD)
+                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                         if (result or result_1):
                                             NOS_API.test_cases_results_info.channel_boot_up_state = False
                                         else:
@@ -3764,11 +3767,11 @@ def runTest():
                                                     
                                                     return
                                                 if(video_height == "720"):
-                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                                 elif(video_height == "1080"):
-                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                                 if (result or result_1):
                                                     NOS_API.test_cases_results_info.channel_boot_up_state = False
                                                 else:
@@ -3907,7 +3910,7 @@ def runTest():
                                 if (video_height != "720"):
                         
                                     if (video_height == "1080"):
-                                        if (TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "menu", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)):
+                                        if (TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "menu", "[Inst_Mode_1080]", NOS_API.thres)):
                                             TEST_CREATION_API.write_log_to_file("Installation Resolution")
                                             NOS_API.test_cases_results_info.isTestOK = False
                                             NOS_API.set_error_message("Resolução")
@@ -4067,7 +4070,7 @@ def runTest():
                                         report_file)
                                     
                                     return
-                                if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)):
+                                if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Status_Check", "[Inst_Mode]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Status_Check", "[Inst_Mode]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Status_Check", "[Inst_Mode]", NOS_API.thres)):
                                     NOS_API.test_cases_results_info.channel_boot_up_state = False
                                 else:
                                     TEST_CREATION_API.send_ir_rc_command("[CH_1]")
@@ -4165,11 +4168,11 @@ def runTest():
                                                 
                                                 return
                                             if(video_height == "720"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                             elif(video_height == "1080"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                             if (result or result_1):
                                                 NOS_API.test_cases_results_info.channel_boot_up_state = False
                                             else:
@@ -4349,11 +4352,11 @@ def runTest():
                                                         
                                                         return
                                                     if(video_height == "720"):
-                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                                     elif(video_height == "1080"):
-                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                                     if (result or result_1):
                                                         NOS_API.test_cases_results_info.channel_boot_up_state = False
                                                     else:
@@ -4889,7 +4892,7 @@ def runTest():
                                     return
                                 
                                 if(video_height != "1080"):
-                                    if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):    
+                                    if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):    
                                         TEST_CREATION_API.send_ir_rc_command("[OK]")
                                         NOS_API.wait_for_signal_present(400)
                                         NOS_API.test_cases_results_info.DidUpgrade = 1
@@ -5289,7 +5292,7 @@ def runTest():
                                             
                                             return
                                         
-                                        if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):    
+                                        if(TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):    
                                             TEST_CREATION_API.send_ir_rc_command("[OK]")
                                             NOS_API.wait_for_signal_present(400)
                                             NOS_API.test_cases_results_info.DidUpgrade = 1
@@ -5722,8 +5725,8 @@ def runTest():
                                     
                                     return
                             if(video_height == "720"):
-                                if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
-                                    if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]")):
+                                if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
+                                    if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres)):
                                         NOS_API.test_cases_results_info.isTestOK = False  
                                         NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                         + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -5810,8 +5813,8 @@ def runTest():
                                         
                                         return
                                     
-                                    if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
-                                        if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]")):
+                                    if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
+                                        if (TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres)):
                                             NOS_API.test_cases_results_info.isTestOK = False  
                                             NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                             + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -5897,7 +5900,7 @@ def runTest():
                                             
                                             return
                                             
-                                        if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]") or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]") or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]") or TEST_CREATION_API.compare_pictures("update_ref", "menu") or TEST_CREATION_API.compare_pictures("update_ref2", "menu") or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]")):
+                                        if(TEST_CREATION_API.compare_pictures("Old_Sw_Channel_2_ref", "menu", "[Old_Sw_Channel_2]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_2_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("Old_Sw_Channel_ref", "menu", "[Old_Sw_Channel]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("No_Upgrade_Error_ref", "menu", "[No_Upgrade_Error_720]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref1", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref2", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref3", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("blue_ref4", "menu", "[OLD_ZON]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_ref2", "menu", "[FULL_SCREEN]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("update_screen_" + video_height + "_ref", "menu", "[UPDATE_SCREEN]", NOS_API.thres)):
                                             NOS_API.test_cases_results_info.isTestOK = False  
                                             NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_code \
                                                                                             + "; Error message: " + NOS_API.test_cases_results_info.sw_upgrade_nok_error_message)
@@ -5945,7 +5948,7 @@ def runTest():
                                 NOS_API.SET_720 = False
                     
                             if not(video_height == "576"):
-                                threshold = TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD
+                                threshold = NOS_API.thres
                             else:
                                 threshold = NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD
                             
@@ -6150,11 +6153,11 @@ def runTest():
                                         
                                         return
                                     if(video_height == "720"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                     elif(video_height == "1080"):
-                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                     if (result or result_1):
                                         NOS_API.test_cases_results_info.channel_boot_up_state = False
                                     else:
@@ -6294,11 +6297,11 @@ def runTest():
                                                 
                                                 return
                                             if(video_height == "720"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                             elif(video_height == "1080"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                             if (result or result_1):
                                                 NOS_API.test_cases_results_info.channel_boot_up_state = False
                                             else:
@@ -6474,11 +6477,11 @@ def runTest():
                                             
                                             return
                                         if(video_height == "720"):
-                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                         elif(video_height == "1080"):
-                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                            result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                            result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                         if (result or result_1):
                                             NOS_API.test_cases_results_info.channel_boot_up_state = False
                                         else:
@@ -6618,11 +6621,11 @@ def runTest():
                                                     
                                                     return
                                                 if(video_height == "720"):
-                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                                 elif(video_height == "1080"):
-                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                    result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                    result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                                 if (result or result_1):
                                                     NOS_API.test_cases_results_info.channel_boot_up_state = False
                                                 else:
@@ -6761,7 +6764,7 @@ def runTest():
                                 if (video_height != "720"):
                         
                                     if (video_height == "1080"):
-                                        if (TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "menu", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)):
+                                        if (TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "menu", "[Inst_Mode_1080]", NOS_API.thres)):
                                             TEST_CREATION_API.write_log_to_file("Installation Resolution")
                                             NOS_API.test_cases_results_info.isTestOK = False
                                             NOS_API.set_error_message("Resolução")
@@ -6885,7 +6888,7 @@ def runTest():
                                         report_file)
                                     
                                     return
-                                if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Status_Check", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)):
+                                if(TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Status_Check", "[Inst_Mode]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref2", "Status_Check", "[Inst_Mode]", NOS_API.thres) or TEST_CREATION_API.compare_pictures("installation_boot_up_ref3", "Status_Check", "[Inst_Mode]", NOS_API.thres)):
                                     NOS_API.test_cases_results_info.channel_boot_up_state = False
                                 else:
                                     TEST_CREATION_API.send_ir_rc_command("[CH_1]")
@@ -7024,11 +7027,11 @@ def runTest():
                                                 
                                                 return
                                             if(video_height == "720"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                             elif(video_height == "1080"):
-                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                             if (result or result_1):
                                                 NOS_API.test_cases_results_info.channel_boot_up_state = False
                                             else:
@@ -7208,11 +7211,11 @@ def runTest():
                                                         
                                                         return
                                                     if(video_height == "720"):
-                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
+                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_eng_ref", "Inst_Mode", "[Inst_Mode]", NOS_API.thres)
                                                     elif(video_height == "1080"):
-                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
-                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD)
+                                                        result = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
+                                                        result_1 = TEST_CREATION_API.compare_pictures("installation_boot_up_1080_eng_ref", "Inst_Mode", "[Inst_Mode_1080]", NOS_API.thres)
                                                     if (result or result_1):
                                                         NOS_API.test_cases_results_info.channel_boot_up_state = False
                                                     else:

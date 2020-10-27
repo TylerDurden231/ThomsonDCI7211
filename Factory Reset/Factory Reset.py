@@ -135,7 +135,7 @@ def runTest():
                     return
                 
                 #if not(TEST_CREATION_API.compare_pictures("factory_reset_ref", "Factory_Reset", "[FACTORY_RESET_MENU]")):
-                if not(TEST_CREATION_API.compare_pictures("Factory_Reset_720_ref", "Factory_Reset", "[FACTORY_RESET_MENU]")):
+                if not(TEST_CREATION_API.compare_pictures("Factory_Reset_720_ref", "Factory_Reset", "[FACTORY_RESET_MENU]") or TEST_CREATION_API.compare_pictures("Factory_Reset_720_ref_2", "Factory_Reset", "[FACTORY_RESET_MENU]")):
                     TEST_CREATION_API.send_ir_rc_command("[LEFT]")
                     TEST_CREATION_API.send_ir_rc_command("[LEFT]")
                     TEST_CREATION_API.send_ir_rc_command("[INIT]")
@@ -186,7 +186,7 @@ def runTest():
                         return
                     
                     #if not(TEST_CREATION_API.compare_pictures("factory_reset_ref", "Factory_Reset_1", "[FACTORY_RESET_MENU]")): 
-                    if not(TEST_CREATION_API.compare_pictures("Factory_Reset_720_ref", "Factory_Reset_1", "[FACTORY_RESET_MENU]")):
+                    if not(TEST_CREATION_API.compare_pictures("Factory_Reset_720_ref", "Factory_Reset_1", "[FACTORY_RESET_MENU]") or TEST_CREATION_API.compare_pictures("Factory_Reset_720_ref_2", "Factory_Reset", "[FACTORY_RESET_MENU]")):
                         TEST_CREATION_API.write_log_to_file("Doesn't Navigate to right place")
                         NOS_API.set_error_message("Navegação")
                         NOS_API.update_test_slot_comment("Error code = " + NOS_API.test_cases_results_info.navigation_error_code \

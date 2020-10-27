@@ -357,6 +357,8 @@ def runTest():
                     ## Compare grabbed and expected image and get result of comparison
                     video_result1 = NOS_API.compare_pictures("HDMI_video_ref1", "HDMI_video", "[HALF_SCREEN]")
                     video_result2 = NOS_API.compare_pictures("HDMI_video_ref2", "HDMI_video", "[HALF_SCREEN]")
+                    video_result3 = NOS_API.compare_pictures("HDMI_video_ref3", "HDMI_video", "[HALF_SCREEN]")
+                    video_result4 = NOS_API.compare_pictures("HDMI_video_ref4", "HDMI_video", "[HALF_SCREEN]")
                 except Exception as error:
                     ## Set test result to INCONCLUSIVE
                     TEST_CREATION_API.write_log_to_file(str(error))
@@ -365,7 +367,7 @@ def runTest():
                     TEST_CREATION_API.write_log_to_file("There is no signal on HDMI 720p interface.")
             
                 ## Check video analysis results and update comments
-                if (video_result1 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or video_result2 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
+                if (video_result1 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or video_result2 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or video_result3 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD or video_result4 >= TEST_CREATION_API.DEFAULT_HDMI_VIDEO_THRESHOLD):
                     ## Set test result to PASS
                     test_result_quality = True
                 else:
@@ -641,6 +643,7 @@ def runTest():
                             ## Compare grabbed and expected image and get result of comparison
                             video_result1 = NOS_API.compare_pictures("SCART_video_ref1", "SCART_video", "[HALF_SCREEN_576p]")
                             video_result2 = NOS_API.compare_pictures("SCART_video_ref2", "SCART_video", "[HALF_SCREEN_576p]")
+                            video_result3 = NOS_API.compare_pictures("SCART_video_ref3", "SCART_video", "[HALF_SCREEN_576p]")
                            
                         except Exception as error:
                            ## Set test result to INCONCLUSIVE
@@ -650,7 +653,7 @@ def runTest():
                            NOS_API.set_error_message("Video Scart")
 
                         ## Check video analysis results and update comments
-                        if (video_result1 >= NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD or video_result2 >= NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD):
+                        if (video_result1 >= NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD or video_result2 >= NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD or video_result3 >= NOS_API.DEFAULT_CVBS_VIDEO_THRESHOLD):
                            ## Set test result to PASS
                            test_result_SCART_video = True
                         else:
